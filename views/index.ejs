@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <title>Habit Tracker</title>
+  </head>
+  <body>
+    <h1 class="heading">Habit Tracker</h1>
+
+    <!-- Add Habits -->
+    <div class="form-container">
+      <form action="/habit/add" method="post">
+        <label for="habitName">New Habit:</label>
+        <input
+          type="text"
+          id="habitName"
+          name="name"
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Add</button>
+      </form>
+    </div>
+
+    <div class="habit-container">
+      <ul class="list-container">
+        <% habits.reverse().forEach(habit => { %>
+        <li>
+          <h4 class="habit-name"><%= habit.name %></h4>
+          <div id="weekly-view-<%= habit._id %>">
+            <%- include('weekCalendar', { habits: [habit], weekDays: weekDays
+            }); -%>
+          </div>
+
+          <form
+            action="/habit/<%= habit._id %>/delete"
+            method="post"
+            style="display: inline"
+          >
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+  </body>
+</html>

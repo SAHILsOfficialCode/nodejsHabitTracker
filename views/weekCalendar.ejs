@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+    <title>Habit Tracker</title>
+  </head>
+  <body>
+    <div class="week-container">
+      <% for(let habit of habits) { %>
+      <div>
+        <div class="date-container">
+          <% for(let date of weekDays) { %>
+          <div>
+            <div>
+              <p><%= date %></p>
+            </div>
+            <% let found = false; let status = ''; for(const day of habit.days)
+            { if(day.date === date) { found = true; status = day.status; break;
+            } } %>
+            <div>
+              <a
+                href="/habit/<%= habit._id %>/toggle-status?habitId=<%= habit._id %>&date=<%= date %>"
+              >
+                <% if (found && status === 'Done') { %>
+                <span habit-id="<%= habit._id %>">Done</span>
+                <% } else if (found && status === 'Not done') { %>
+                <span habit-id="<%= habit._id %>">Not Done</span>
+                <% } else { %>
+                <span habit-id="<%= habit._id %>">None</span>
+                <% } %>
+              </a>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

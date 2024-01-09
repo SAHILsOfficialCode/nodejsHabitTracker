@@ -1,0 +1,168 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.heading {
+  text-align: center;
+  color: #333;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3367d6;
+}
+
+#weekly-view {
+  margin: 20px 0;
+}
+
+.habit-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.list-container {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li form {
+  margin-left: 10px;
+}
+
+li button {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+li button:hover {
+  background-color: #c0392b;
+}
+
+/* Week Calendar */
+.date-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.habit-container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.list-container {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.habit-name {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#weekly-view {
+  margin-bottom: 10px;
+}
+
+.date-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.date-container > div {
+  flex: 0 0 calc(14.28% - 20px);
+  margin: 10px;
+}
+
+.date-container p {
+  text-align: center;
+  margin: 0;
+  font-size: 14px;
+}
+
+.date-container a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.date-container a:hover {
+  background-color: #e6e6e6;
+}
+
+span[habit-id] {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+span[data-habit-id] {
+  margin-right: 5px;
+}
+
+span:hover {
+  background-color: #e6e6e6;
+}
